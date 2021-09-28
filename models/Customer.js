@@ -3,11 +3,11 @@ const bcrypt = require("bcryptjs");
 const { Schema } = mongoose;
 
 const customerSchema = new Schema({
-  fame:  {
+   fname:  {
         type: String,
         required:true     
-    },
-    lame:  {
+    }, 
+    lname:  {
         type: String,
         required:true     
     },
@@ -20,7 +20,8 @@ const customerSchema = new Schema({
         required:true
     },
     phone: {
-        type: [Number]
+        type: [Number],
+        required:false
 
     },
     dateCreate:{
@@ -35,9 +36,9 @@ const customerSchema = new Schema({
 
 customerSchema.pre("save", function(next) {
     var customer = this;
-    bycrpt.genSalt(10)
+    bcrypt.genSalt(10)
     .then((salt)=>{
-        bycrpt.hash(customer.password, salt)
+        bcrypt.hash(customer.password, salt)
         .then((encryptedpwd)=>{
             customer.password = encryptedpwd
             next()

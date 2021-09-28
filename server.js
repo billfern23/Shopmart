@@ -9,10 +9,13 @@ const PORT = 3000;
 app = express();
 //user json
 app.use(express.json());
-//creating a new user
-app.post("/register",(req,res)=>{
+
+
+app.post("/register", function(req,res){
     //instantiate the document you created in model
+  
    const customer = new customerModel(req.body)
+  
    customer.save()
    .then((newCustomer)=>{
       res.json({
@@ -21,9 +24,13 @@ app.post("/register",(req,res)=>{
       })
    })
    .catch((err)=>{
-       console.log(`Errod ${err}`)
+       console.log(`error ${err}`)
+       res.status(500).json({
+           message: err
+       })
    })
 })
+
 app.listen(process.env.PORT,() =>{
     console.log(`Server is up and running ${process.env.Port}`)
     mongoose.connect(process.env.MONGOOSE_CONNECTION_STRING)
@@ -36,3 +43,6 @@ app.listen(process.env.PORT,() =>{
 
 
 })
+
+
+//creating a new user
