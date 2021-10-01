@@ -35,6 +35,7 @@ const customerSchema = new Schema({
 });
 
 customerSchema.pre("save", function(next) {
+    
     var customer = this;
     bcrypt.genSalt(10)
     .then((salt)=>{
