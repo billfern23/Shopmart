@@ -8,27 +8,32 @@ const productSchema = new Schema({
     },
     price: {
         type: String,
-        required: True
+        required: true
     },
     description: {
         type: String,
-        required: False
+        required: false
     },
     category: {
         type: String,
-        required: True
+        required: true
     },
     quantity: {
         type: String,
-        required: True
+        required: true
     },
-    BestSeller: {
+    bestSeller: {
         type:Boolean,
-        required: True
+        required: true
     },
-    url:{
+    picurl:
+    {
         type:String,
-        required:True
+        required:true
+    },
+    dateCreated:{
+        type:Date,
+        default:Date.now()
     }
 
     
