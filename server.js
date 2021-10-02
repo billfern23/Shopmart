@@ -1,9 +1,8 @@
 //assignment 1 that is working
 const express = require("express");
 const mongoose = require("mongoose");
-//const { where } = require("./models/Customer.js");
-//const customerModel = require('./models/Customer.js')
-const customerController = require('./controllers/CustomerController.JS')
+
+const customerController = require('./controllers/CustomerController.js')
 const productController = require('./controllers/ProductControllers.js')
 
 
