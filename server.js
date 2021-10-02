@@ -268,12 +268,70 @@ app.get("/categories",(req, res)=>{
 
 
 
-//filter for products based on categories
+//6. Filter based on productid
+
+app.get("/products/:id", (req, res) =>{
+   
+ 
+    productModel.findById(req.params.id)
+    .then(Product=>{
+        if(Product){
+            
+            res.json({
+                message : `Product with id ${req.params.id}`,
+                data: Product
+            })
+        }
+        else {
+            res.status(400).json({
+                message: `No customer with id ${req.params.id}`
+            })
+        }
+
+    })
+    .catch(err=>{
+        res.status(500).json({
+            messsage:  err
+        })
+
+        })
+    })
 
 
+ //7. updates an existing product
+ app.put("/products/:id", (req, res)=>{
+    const {_id} = req.body;
+    if(_id){
+        res.status(404).json({
+            message: `ids cannot be updated, please remove them from body`
+        })
+    } else {
+        productModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        .then((Product) =>{
+            if(Product){
 
+                res.json({
+                    message: `Product with the id ${req.params.id} was updated`,
+                    data: Product
+                })
+            }
+            else {
+                res.status(404).json({
+                        message: `Product with id ${req.params.id} does not exist`
+                })
+            }
 
+        })
+        .catch((err)=>{
+            res.status(500).json({
+                message: `err ${err}`
+            })
+        })
+        
+    }
+ })   
 
+//8 deleting api
 
 
 
