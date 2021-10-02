@@ -332,6 +332,20 @@ app.get("/products/:id", (req, res) =>{
  })   
 
 //8 deleting api
+app.delete("/products/:id", (req, res)=>{
+    productModel.findByIdAndDelete(req.params.id)
+    .then(()=>{
+        res.json({
+            message: `Product with ${req.params.id} was deleted`
+        })
+    })
+    .catch((err)=>{
+        res.status(500).json({
+            message: `err ${err}`
+        })
+    })
+
+})
 
 
 
