@@ -1,7 +1,9 @@
 //assignment 1 that is working
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const { where } = require("./models/Customer.js");
 const customerModel = require('./models/Customer.js')
+const productModel = require('./models/Products.js')
 
 if(process.env.NODE_ENV!="production"){
     
@@ -52,6 +54,7 @@ app.post("/register", function(req,res){
 
     if(!checker){
         res.status(400).json({
+            hint: `Complete the parameters`,
             message: complete
         })
     }
@@ -105,6 +108,178 @@ app.get("/customers/:id", (req, res) =>{
 
         })
     })
+
+
+
+//Product Schema
+// add product
+app.post("/addproduct", (req, res)=>{
+    const {name, price, category, bestSeller} = req.body;
+    let completeproduct = {
+        nameCheck: true,
+        priceCheck: true,
+        categorycheck: true,
+        bestSellercheck: true,
+
+    }
+    console.log(bestSeller)
+    let checker = true;
+    if(!name){
+        completeproduct.nameCheck = ` No name provided, missing key: (name)`
+        checker = false;
+    }
+    if(!price){
+        completeproduct.priceCheck = ` No price provided, missing key: (price)`
+        checker = false;
+    }
+    if(!category){
+        completeproduct.categorycheck = ` No category provided, missing key: (category)`
+        checker = false;
+    }
+    //***********************************************************************fix before handing it in************************************* */
+    // if(bestSeller == ""){
+    //     completeproduct.bestSellercheck = `No BestSeller provided, missing key: bestSeller`
+    // }
+    if(bestSeller  !== "true" && bestSeller  !== "false"  ){
+        completeproduct.bestSellercheck = `Please use either true or false, case sensitive, or missing key(Boolean)`
+        checker = false;
+    }
+    if(!checker){
+        res.json({
+            message: `Complete the listed parameters`,
+            data: completeproduct
+        })
+    }
+    else {
+        
+            const product = new productModel(req.body)
+            product.save()
+            .then((newProduct)=>{
+                res.json({
+                    message: `New Product was added successfully`,
+                    data: newProduct
+                })
+            })
+            .catch((err)=>{
+        
+                res.status(500).json({
+                    message:` err: ${errr}`
+                })
+            })
+        
+    }
+
+})
+//2.4. 5. retreieve all products
+
+app.get("/products",(req, res)=>{
+if(req.query.category){
+    productModel.find()
+    .where("category").equals(req.query.category)
+    .then((products) =>{
+        if(products.length){
+
+            res.json({
+                message: `Found products matching category ${req.query.category}`,
+                data: products
+            })
+        }
+        else {
+            res.json({
+                message: `Nothing found, please check category list with /categories, endpoint, case sensitive `,
+          
+            })
+        }
+    
+
+    })
+    .catch((err)=>{
+        res.status(500).json({
+            message: `error : ${err}`
+        })
+    })
+
+
+}
+
+else if(req.query.bestseller){
+    if(req.query.bestseller == "yes" || req.query.bestseller == "Yes"){
+
+        productModel.find()
+        .where('bestSeller').equals(true)
+        .then((bestsellers)=>{
+            res.json({
+                message: `List of best sellers`,
+                data: bestsellers
+            })
+        })
+        .catch((err)=>{
+            res.status(500).json({
+            
+                message: `err ${err}`
+            })
+                
+        })
+    }
+
+    else {
+        res.json({
+            message: `Please type yes or Yes`
+        })
+    }
+}
+
+else {
+    
+        productModel.find()
+        .then((products)=>{
+            res.json({
+                message: `List of all available products`,
+                Products: products
+    
+            })
+        })
+        .catch((err)=>{
+            res.status(500).json({
+                message: `error : ${err}`
+            })
+        })
+
+}
+
+})
+
+//3. filter for categories
+app.get("/categories",(req, res)=>{
+    productModel.find({}).distinct('category')
+    .then((products)=>{
+        res.json({
+            message: `List of categories`,
+            categories: products
+
+        })
+    })
+    .catch((err)=>{
+        res.status(500).json({
+            message: `error : ${err}`
+        })
+    })
+})
+
+
+
+//filter for products based on categories
+
+
+
+
+
+
+
+
+
+
+
 
 
 
