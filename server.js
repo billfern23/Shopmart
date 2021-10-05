@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const customerController = require('./controllers/CustomerController.js')
 const productController = require('./controllers/ProductControllers.js')
+const endpointController = require('./controllers/endPointController.js') 
 
 
 if(process.env.NODE_ENV!="production"){
@@ -21,6 +22,7 @@ app.use(express.json());
 // import the customercontroller here
 app.use("/customers", customerController);
 app.use("/products", productController);
+app.use(endpointController)
 
 app.listen(process.env.PORT,() =>{
     console.log(`Server is up and running ${process.env.Port}`)
