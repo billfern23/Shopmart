@@ -3,16 +3,21 @@
 const customerModel = require('../models/Customer.js')
 //creates a customer
 exports.createACustomer = (req, res) => {
-    const {fname, lname, email, password} = req.body;
+    const {fname, lname, email, password, phone }= req.body;
     let complete = {
         fnameCheck: true,
         lnameCheck: true,
         emailcheck: true,
         checkpasscode: true,
+        checkphone: true
 
     }
-  
     let checker = true;
+  
+    if(typeof(phone) === "string"){
+        complete.checkphone =  `Phone is in string, you need to change it to number, remove quotations`
+        checker = false
+    }
     
     if(!fname){
         complete.fnameCheck = `Missing First name Key:(fname)`
@@ -37,6 +42,7 @@ exports.createACustomer = (req, res) => {
         checker = false
     }
 
+
     if(!checker){
         res.status(400).json({
             hint: `Complete the parameters`,
@@ -46,6 +52,7 @@ exports.createACustomer = (req, res) => {
     //instantiate the document you created in model
     else {
         const customer = new customerModel(req.body)
+       
   
         customer.save()
         .then((newCustomer)=>{
