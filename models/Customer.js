@@ -39,7 +39,7 @@ customerSchema.pre("save", function(next) {
     let customer = this;
     
     
-    bcrypt.genSalt(process.env.SALT)
+    bcrypt.genSalt(10)
     .then((salt)=>{
         bcrypt.hash(customer.password, salt)
         .then((encryptedpwd)=>{
@@ -52,9 +52,9 @@ customerSchema.pre("save", function(next) {
             })
         })
         .catch((err)=>{
-           res.json({
-               message: err
-           })
+            res.json({
+                message: err
+            })
         })
     })
 })
