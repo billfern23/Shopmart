@@ -36,7 +36,7 @@ const customerSchema = new Schema({
 
 customerSchema.pre("save", function(next) {
 
-    var customer = this;
+    let customer = this;
     
     
     bcrypt.genSalt(10)
@@ -47,10 +47,14 @@ customerSchema.pre("save", function(next) {
             next()
         })
         .catch((err)=>{
-            console.log(`Error: ${err}`)
+            res.json({
+                message: err
+            })
         })
         .catch((err)=>{
-            console.log(`Errorr" ${err}`)
+           res.json({
+               message: err
+           })
         })
     })
 })
