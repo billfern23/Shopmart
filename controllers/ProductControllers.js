@@ -12,7 +12,7 @@ router.post("/addproduct",Productservices.addnewproduct );
 //5. retrieve best selleter
 router.get("/",Productservices.retrieveandfilterProducts )
 
-//3. filter for categories
+//3. filter to get all categories
 router.get("/categories",Productservices.showAllcategories)
 
 

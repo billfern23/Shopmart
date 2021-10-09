@@ -51,14 +51,15 @@ exports.createACustomer = (req, res) => {
     }
     //instantiate the document you created in model
     else {
-        const customer = new customerModel(req.body)
+        const newcustomer = new customerModel(req.body)
        
   
-        customer.save()
-        .then((newCustomer)=>{
+        newcustomer.save()
+        .then((Customer)=>{
            res.json({
                message: "the customer successfully added",
-               data: newCustomer
+               data: Customer
+              
            })
         })
         .catch((err)=>{
@@ -92,9 +93,17 @@ exports.getACustomer= (req, res) =>{
 
     })
     .catch(err=>{
-        res.status(500).json({
-            messsage:  err
-        })
+        if(err.name == "CastError") {
+            res.status(404).json({
+                message: `Id format is incorrect, please fix, wrong number of characters in id`
+            })
+        }
+        else {
+
+            res.status(500).json({
+                messsage:  err
+            })
+        }
 
         })
 };

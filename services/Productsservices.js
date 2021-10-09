@@ -8,7 +8,7 @@ exports.addnewproduct = (req, res) => {
         bestSellercheck: true,
 
     }
-    console.log(bestSeller)
+    
     let checker = true;
     if(!name){
         completeproduct.nameCheck = ` No name provided, missing key: (name)`
@@ -168,9 +168,17 @@ exports.getAProduct = (req, res) =>{
 
     })
     .catch(err=>{
-        res.status(500).json({
-            messsage:  err
-        })
+        if(err.name == "CastError") {
+            res.status(404).json({
+                message: `Id format is incorrect, please fix, wrong number of characters in id`
+            })
+        }
+        else {
+
+            res.status(500).json({
+                messsage:  err
+            })
+        }
 
         })
 };
@@ -200,9 +208,18 @@ exports.updateAProduct = (req, res) =>{
 
         })
         .catch((err)=>{
-            res.status(500).json({
-                message: `err ${err}`
-            })
+            if(err.name == "CastError") {
+                res.status(404).json({
+                    message: `Id format is incorrect, please fix, wrong number of characters in id`
+                })
+            }
+            else {
+    
+                res.status(500).json({
+                    messsage:  err
+                })
+            }
+    
         })
         
     }
@@ -213,8 +230,11 @@ exports.deleteAproduct = (req, res) =>{
     productModel.findByIdAndDelete(req.params.id)
     .then((Product)=>{
       if(Product){
+         
           res.json({
               message: `Product with ${req.params.id} was deleted`
+            
+              
           })
 
       }
@@ -225,8 +245,16 @@ exports.deleteAproduct = (req, res) =>{
       }
     })
     .catch((err)=>{
-        res.status(500).json({
-            message: `err ${err}`
-        })
+        if(err.name == "CastError") {
+            res.status(404).json({
+                message: `Id format is incorrect, please fix, wrong number of characters in id`
+            })
+        }
+        else {
+
+            res.status(500).json({
+                messsage:  err
+            })
+        }
     })
 };
