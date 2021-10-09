@@ -1,0 +1,1 @@
+This is an API that does the following: Inorder to use the api, you have to use these endpoints with the proper case,
