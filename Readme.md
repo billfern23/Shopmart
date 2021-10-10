@@ -6,8 +6,8 @@ This is an API that does the following: <br />
 **DISCLAIMER: INORDER TO USE API, YOU HAVE TO USE THIS END POINT AND PROPER CASES, METHODS** </p1>
 
 
-**QUICK LINKS**<br />
-Customer:<br />
+<h2>QUICK LINKS</h2>
+<b>Customer:<b>
 1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register<br />
 2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id<br />
 
