@@ -69,9 +69,9 @@ Products:<br />
     METHOD: GET
 
     https://shopmart24.herokuapp.com/customer/:id
-    How to use:
-    id is a required parameter, otherwise customer wont be retrieved.
-    Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it.
+    How to use: </br>
+    Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it. </br>
+    id is a required parameter, otherwise customer wont be retrieved.</br> 
   <b>You would need the exact ID for this endpoint to retrieve a customer.</b>
 </p2>
 <b>Product</b> </br>
@@ -119,9 +119,9 @@ Products:<br />
     METHOD: GET
 
     https://shopmart24.herokuapp.com/product/:id
-    How to use:
-    id is a required parameter, otherwise product wont be retrieved.
-    Replace ':id' with known product ID.
+    How to use:</br>
+    Replace ':id' with known product ID.</br>
+    id is a required parameter, otherwise product wont be retrieved.</br>
     **You would need the exact ID for this endpoint to retrieve a product.**
 
 
@@ -130,9 +130,9 @@ Products:<br />
     METHOD: PUT
 
     https://shopmart24.herokuapp.com/product/:id </br>
-    How to use:
+    How to use:</br>
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it. </br>
     id is a required parameter, otherwise product wont be updated.
-    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     <b>You would need the exact ID for this endpoint to update a product.
     you can update one at a time, you dont have to have all fields in your update body,
      if you do they will be subjected to validation. Do not use null here unless required for instance, quantity</b>
@@ -141,9 +141,9 @@ Products:<br />
 4. Delete one product using ID:</br>
      METHOD: DELETE</br>
         https://shopmart24.herokuapp.com/product/:id </br>
-    How to use:
+    How to use:</br>
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.</br>
     id is a required parameter, otherwise product wont be deleted.
-    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     <b>You would need the exact ID for this endpoint to DELETE a product.</b>
     </p2>
 
@@ -152,7 +152,7 @@ Products:<br />
 1. Retrieve all products from database:</br>
     METHOD: GET</br>
     https://shopmart24.herokuapp.com/products
-    How to use:
+    How to use:</br>
     Paste url with get method
     This will give you a list of all products from the database
 
@@ -163,7 +163,7 @@ Products:<br />
 
     https://shopmart24.herokuapp.com/products/categories</br>
     </br>
-    How to use:
+    How to use:</br>
     Paste url with get method
         This will give you a list of all categories in the database.
 
@@ -174,8 +174,8 @@ Products:<br />
     METHOD: GET</br>
         
     https://shopmart24.herokuapp.com/products?category=categoryname </br>
-    How to use:
-    Paste url with get method
+    How to use:</br>
+    Paste url with get method, replace categoryname with the category you are looking for.
     Method uses a query field a query field called cateogry, replace categoryname with 
     the category of products you want to retrieve.
     <b>DISCLAIMER: The categoryname must be exactly the same way it is stored in the database ie, case 
@@ -189,7 +189,7 @@ Products:<br />
 
 4. Retrieve products that are Best sellers </br>
     METHOD: GET</br>
-     How to use:
+     How to use:</br>
     Paste url with get method
     https://shopmart24.herokuapp.com/products?bestseller=yes</br>
 
