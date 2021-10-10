@@ -22,7 +22,7 @@ exports.createACustomer = (req, res) => {
   //value
   //Firstname
   if (fname == undefined) {
-    errorList.fnameCheck = `Missing First name Key:(fname) in body`;
+    errorList.fnameCheck = `First name Key required in body:(fname) `;
     checker = false;
   }
   else{
@@ -43,7 +43,7 @@ exports.createACustomer = (req, res) => {
   } 
 //lastname
   if (lname == undefined) {
-    errorList.lnameCheck = `Missing Last name Key:(lname) in body`;
+    errorList.lnameCheck = ` Last name Key required in body:(lname)`;
     checker = false;
   }
   else {
@@ -63,7 +63,7 @@ exports.createACustomer = (req, res) => {
   }
 //email
   if (email == undefined) {
-    errorList.emailcheck = `Missing email Key:(email) in body`;
+    errorList.emailcheck = `Missing email Key in body:(email)`;
     checker = false;
   }
  else {
@@ -97,7 +97,7 @@ exports.createACustomer = (req, res) => {
 
 //password
   if (password == undefined) {
-    errorList.passwordcheck = `Missing password Key:(password)`;
+    errorList.passwordcheck = ` password Key required in body:(password)`;
     checker = false;
   }
 
@@ -163,8 +163,7 @@ exports.createACustomer = (req, res) => {
   //flag checker, returns 400, if values are missing, partial information
   if (!checker) {
     res.status(400).json({
-      result: `Customer was not added`,
-      message: `Missing required parameters or values, or values dont meet criteria, fix`,
+      result: `Customer was not added, Fix following errors`,
       MissingParameters: errorList,
     });
   }

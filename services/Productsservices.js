@@ -15,7 +15,7 @@ exports.addnewproduct = (req, res) => {
     
     let checker = true;
     if(name  == undefined){
-        errorList.nameCheck = ` Missing name of product key in body, missing key: (name)`
+        errorList.nameCheck = ` Product name key required in body, missing key: (name)`
         checker = false;
     }
     else {
@@ -34,7 +34,7 @@ exports.addnewproduct = (req, res) => {
 
     }
     if(price == undefined){
-        errorList.priceCheck = ` Missing price of product key in body, missing key: (price)`
+        errorList.priceCheck = ` Price key required in body, missing key: (price)`
         checker = false;
     }
     else {
@@ -64,7 +64,7 @@ exports.addnewproduct = (req, res) => {
 
 
     if(category == undefined){
-        errorList.categorycheck = ` No category key provided in body, missing key: (category)`
+        errorList.categorycheck = ` Category key required in body, missing key: (category)`
         checker = false;
     }  else {
         if(typeof(category) !== "string"){
@@ -96,7 +96,7 @@ exports.addnewproduct = (req, res) => {
     // }
 
     if(bestSeller == undefined){
-        errorList.bestSellercheck =  ` No bestseller key provided in body, missing key: (bestSeller)`
+        errorList.bestSellercheck =  ` Best seller key required in body, missing key: (bestSeller)`
         checker = false;
     }
     else {
