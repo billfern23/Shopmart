@@ -1,57 +1,159 @@
 const productModel = require('../models/Products.js')
+//adding a new product
 exports.addnewproduct = (req, res) => {
-    const {name, price, category, bestSeller} = req.body;
-    let completeproduct = {
-        nameCheck: true,
-        priceCheck: true,
-        categorycheck: true,
-        bestSellercheck: true,
+    const {name, price, description, category, quantity, bestSeller, picurl} = req.body;
+    let errorList = {
+        nameCheck: "",
+        priceCheck: "",
+        descriptionCheck: "",
+        categorycheck: "",
+        quantitycheck: "",
+        bestSellercheck: "",
+        picurlcheck: ""
 
     }
     
     let checker = true;
-    if(!name){
-        completeproduct.nameCheck = ` No name provided, missing key: (name)`
+    if(name  == undefined){
+        errorList.nameCheck = ` Missing name of product key in body, missing key: (name)`
         checker = false;
     }
-    if(!price){
-        completeproduct.priceCheck = ` No price provided, missing key: (price)`
+    else {
+        if(typeof(name) !== "string"){
+            errorList.nameCheck = ` Input must be  string datatype`
+            checker = false
+
+        } else {
+            String(name)
+            if (name.length == 0){
+                errorList.nameCheck = `name of product cannot be empty`;
+                checker = false
+              }
+        }
+      
+
+    }
+    if(price == undefined){
+        errorList.priceCheck = ` Missing price of product key in body, missing key: (price)`
         checker = false;
     }
-    if(!category){
-        completeproduct.categorycheck = ` No category provided, missing key: (category)`
-        checker = false;
+    else {
+        if(typeof(price)!= "number"){
+            errorList.priceCheck = `Price has to be a number datatype`
+            checker = false;
+        }
     }
+    if(description !== undefined) {
+        if(typeof(description) !== "string"){
+            errorList.descriptionCheck = `  Input must be  string datatype`
+            checker = false
+
+        }
+        else {
+            if(description == ""){
+                errorList.descriptionCheck = `Description cannot be empty. exclude property if not needed`
+                checker = false
+
+            }
+        }
+
+    }
+
+
+
+
+
+    if(category == undefined){
+        errorList.categorycheck = ` No category key provided in body, missing key: (category)`
+        checker = false;
+    }  else {
+        if(typeof(category) !== "string"){
+            errorList.categorycheck = ` Input must be  string datatype`
+            checker = false
+
+        } else {
+            String(category)
+            if (category.length == 0){
+                errorList.categorycheck = `Category of product cannot be empty`;
+                checker = false
+              }
+        }
+    }
+
+    if(quantity !== undefined){
+       
+        if(typeof(quantity)!= "number"){
+            errorList.quantitycheck = `Quantity has to be a number datatype`
+            checker = false;
+        }
+    }
+
+
+
     //***********************************************************************fix before handing it in************************************* */
     // if(bestSeller == ""){
-    //     completeproduct.bestSellercheck = `No BestSeller provided, missing key: bestSeller`
+    //     errorList.bestSellercheck = `No BestSeller provided, missing key: bestSeller`
     // }
-    if(bestSeller  !== "true" && bestSeller  !== "false"  ){
-        completeproduct.bestSellercheck = `Please use either true or false, case sensitive, or missing key(Boolean)`
+
+    if(bestSeller == undefined){
+        errorList.bestSellercheck =  ` No bestseller key provided in body, missing key: (bestSeller)`
         checker = false;
     }
- 
+    else {
+        if(typeof(bestSeller)!== "boolean"){
+            errorList.bestSellercheck = `Please use either true or false, case sensitive, no quotes, Boolean Type required`
+            checker = false;
+        }
+    
+     
+    }
+    if(picurl !== undefined) {
+        if(typeof(picurl) !== "string"){
+            errorList.picurlcheck = `  Input must be  string datatype`
+            checker = false
+
+        }
+        else {
+            if(picurl == ""){
+                errorList.picurlcheck = `url cannot be empty. exclude property if not needed from body`
+                checker = false
+
+            }
+        }
+
+    }
+
+  // deletes properties in errorList if properties are empty
+
+  for (const property in errorList) {
+    if (!errorList[property]) {
+      delete errorList[property];
+    }
+  }
+   
+
+  
 
     if(!checker){
-        res.json({
-            message: `Complete the listed parameters`,
-            data: completeproduct
+        res.status(400).json({
+            message: `Product not added, Fix the following list of parameters`,
+            data: errorList
         })
     }
     else {
         
-            const product = new productModel(req.body)
-            product.save()
-            .then((newProduct)=>{
+            const newProduct = new productModel(req.body)
+            newProduct.save()
+            .then((product)=>{
                 res.json({
                     message: `New Product was added successfully`,
-                    data: newProduct
+                    data: product
                 })
             })
             .catch((err)=>{
         
                 res.status(500).json({
-                    message:` err: ${errr}`
+                    message:` err: ${err}`
                 })
             })
         

@@ -10,8 +10,15 @@ CUSTOMERS
     POST METHOD
     https://shopmart24.herokuapp.com/customer/register
 
-    required Keys in body: fname, lname, email, password
-    Optional keys in body: phone , this has to be an array.
+    required Keys in body: 
+    {
+        fname : String datatype, 
+        lname: String datatype,
+        email: : String datatype, 
+        password: String Datatype,
+    }
+
+    Optional keys in body: phone : [Numbers] (Array of numbers datatype) 
 
 2) To Retrieve a customer using ID:
     GET METHOD

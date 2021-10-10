@@ -26,12 +26,20 @@ exports.createACustomer = (req, res) => {
     checker = false;
   }
   else{
-      String(fname)
+    if(typeof(fname) !== "string"){
+        errorList.fnameCheck = ` Input must be  string datatype`
+        checker = false
+
+    } else {
+        String(fname)
       if (!fname.length){
-        errorList.fnameCheck = `First name  is empty`;
+        errorList.fnameCheck = `First name  cannot be empty`;
         checker = false
       }
     
+
+    }
+      
   } 
 //lastname
   if (lname == undefined) {
@@ -39,11 +47,19 @@ exports.createACustomer = (req, res) => {
     checker = false;
   }
   else {
-    String(lname)
+    if(typeof(lname) !== "string"){
+        errorList.lnameCheck = ` Input must be  string datatype`
+        checker = false
+
+    } else {
+        String(lname)
       if(!lname.length){
-        errorList.lnameCheck = `Last name is empty`;
+        errorList.lnameCheck = `Last name cannot be empty`;
         checker = false
       }
+
+    }
+    
   }
 //email
   if (email == undefined) {
@@ -51,11 +67,16 @@ exports.createACustomer = (req, res) => {
     checker = false;
   }
  else {
+    if(typeof(lname) !== "string"){
+        errorList.lnameCheck = ` Input must be  string datatype`
+        checker = false
+
+    } else {
 
     String(email)
 
     if (!email.length) {
-        errorList.emailcheck = `Email is empty`;
+        errorList.emailcheck = `Email cannot be empty`;
         checker = false;
       }
       else {
@@ -66,7 +87,7 @@ exports.createACustomer = (req, res) => {
                 checker = false;
         }
       }
- 
+    }
 
 
  } 
@@ -81,13 +102,19 @@ exports.createACustomer = (req, res) => {
   }
 
   else {
+    if(typeof(password) !== "string"){
+        errorList.passwordcheck = ` Input must be  string datatype`
+        checker = false
+
+    } else {
+
     String(password)
     
   if (password.length < 6) {
     errorList.passwordcheck = `Password is too short, minimum length 6`;
     checker = false;
   }
-
+    }
   }
 
 // only perform validation if phone is present in the body, if it is then it proceeds to validate the values otherwise skip.
