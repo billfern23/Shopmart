@@ -3,7 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const customerController = require('./controllers/CustomerController.js')
-const productController = require('./controllers/ProductControllers.js')
+const productsController = require('./controllers/ProductsControllers.js')
+const productController = require('./controllers/ProductController.js')
 const endpointController = require('./controllers/endPointController.js') 
 
 
@@ -21,7 +22,8 @@ app.use(express.json());
 // take all routers and put it in controllers
 // import the customercontroller here
 app.use("/customer", customerController);
-app.use("/products", productController);
+app.use("/products", productsController);
+app.use("/product", productController);
 app.use(endpointController)
 
 app.listen(process.env.PORT,() =>{

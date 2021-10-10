@@ -17,7 +17,9 @@ Products:
 3)Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories
 4)Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname
 5)Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes
-6)Retrieve a product by ID:  https://shopmart24.herokuapp.com/products/:id
+6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/products/:id
+7)Update a product using ID: https://shopmart24.herokuapp.com/products/:id
+8)Delete a product usingID: https://shopmart24.herokuapp.com/products/:id
 
 
 CUSTOMERS
@@ -128,7 +130,7 @@ Products
         not table, Table.
 
 5) Retrieve products that are Best sellers
-    Method: Get
+    METHOD: GET
     
     https://shopmart24.herokuapp.com/products?bestseller=yes
 
@@ -137,12 +139,33 @@ Products
     **Both are case sensitive and spelling sensitive**
 
 
-6)Retrieve a product by ID:
+6)Retrieve a product using ID:
     
-    Method: Get
+    METHOD: GET
 
     https://shopmart24.herokuapp.com/products/:id
 
     id is a required parameter, otherwise product wont be retrieved.
     Replace ':id' with known product ID.
     **You would need the exact ID for this endpoint to retrieve a product.**
+
+
+7) Update one product using ID:
+    
+    METHOD: PUT
+
+    https://shopmart24.herokuapp.com/products/:id
+    id is a required parameter, otherwise product wont be updated.
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
+    **You would need the exact ID for this endpoint to update a product.**
+    **you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation.**
+
+
+8) Delete one product using ID:
+     METHOD: DELETE
+        https://shopmart24.herokuapp.com/products/:id
+ is a required parameter, otherwise product wont be deleted.
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
+    **You would need the exact ID for this endpoint to DELETE a product.**
+ 
+
