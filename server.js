@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const customerController = require('./controllers/CustomerController.js')
 const productsController = require('./controllers/ProductsControllers.js')
-const productController = require('./controllers/ProductController.js')
+const productController = require('./controllers/ProductControllers.js')
 const endpointController = require('./controllers/endPointController.js') 
 
 
