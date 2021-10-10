@@ -55,12 +55,14 @@ exports.updateAProduct = (req, res) =>{
         let checker = "true"
         
         if(name != undefined){
+        
+           
             if(typeof(name)!== "string"){
-               
+             
                 errorListupdate.nameCheck = ` Name has to be a string Type`
                 checker = false
             }
-            else if(name == "") {
+            else if(!name == "") {
                 errorListupdate.nameCheck = `Name cannot be empty`
                 checker = false
             }
@@ -98,7 +100,7 @@ exports.updateAProduct = (req, res) =>{
         if(quantity != undefined){
             if(typeof(quantity)!== "number"){
                
-                errorListupdate.quantitycheck = ` Convert quantity to 0 to show remove`
+                errorListupdate.quantitycheck = ` Convert quantity null or 0`
                 checker = false
             }
            

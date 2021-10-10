@@ -31,6 +31,7 @@ exports.createACustomer = (req, res) => {
         checker = false
 
     } else {
+        
         String(fname)
       if (!fname.length){
         errorList.fnameCheck = `First name  cannot be empty`;

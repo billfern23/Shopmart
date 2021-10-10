@@ -21,6 +21,8 @@ Products:<br />
 7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id<br />
 8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id<br />
 
+Miss-spell an endpoint or go to incorrect one, you will be routed back
+
 
 CUSTOMERS
 1) To Register a new Customer: 
