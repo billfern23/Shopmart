@@ -64,7 +64,7 @@ exports.createACustomer = (req, res) => {
         checker = false;
       }
       else {
-        const regex = /[a-z0-9]+@[a-z]+.com$/gi
+        const regex = /[a-z]+@*.com|.ca$/gi
         
         if(!regex.test(email)){
             errorList.emailcheck = `Not a real email`;
