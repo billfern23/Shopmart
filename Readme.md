@@ -7,9 +7,12 @@ This is an API that does the following: <br />
 
 
 <h2>QUICK LINKS</h2>
-<b>Customer:<b>
-1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register<br />
-2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id<br />
+<b>Customer:<b> </br>
+<ol>
+<li>1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register</li>
+<li>2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/li>
+</ol>
+
 
 Products:<br />
 1)Add new product to database: https://shopmart24.herokuapp.com/products/addproduct<br />
