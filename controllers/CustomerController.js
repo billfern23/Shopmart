@@ -1,15 +1,15 @@
 //used for grouping routes
-const express = require('express')
-const router = express.Router()
-const Customerservice = require('../services/Customerservice.js')
+const express = require("express");
+const router = express.Router();
+const Customerservice = require("../services/Customerservice.js");
 
 //import customerservice services and use the function from there
-router.post("/register",Customerservice.createACustomer)
+router.post("/register", Customerservice.createACustomer);
 
 //pull one customer
-router.get("/:id",Customerservice.getACustomer)
+router.get("/:id", Customerservice.getACustomer);
 
 //handle when client forgets to add id
-router.get("/",Customerservice.getACustomer)
+router.get("/", Customerservice.getACustomer);
 
-module.exports = router
+module.exports = router;
