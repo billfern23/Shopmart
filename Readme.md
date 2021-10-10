@@ -68,7 +68,7 @@ Products:<br />
     
     METHOD: GET
 
-    https://shopmart24.herokuapp.com/customer/:id
+    https://shopmart24.herokuapp.com/customer/:id</br>
     How to use: </br>
     Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it. </br>
     id is a required parameter, otherwise customer wont be retrieved.</br> 
@@ -80,7 +80,7 @@ Products:<br />
     
     METHOD: GET
 
-    https://shopmart24.herokuapp.com/product/addproduct
+    https://shopmart24.herokuapp.com/product/addproduct</br>
   
 
     Required keys in the body:
@@ -118,7 +118,7 @@ Products:<br />
     
     METHOD: GET
 
-    https://shopmart24.herokuapp.com/product/:id
+    https://shopmart24.herokuapp.com/product/:id</br>
     How to use:</br>
     Replace ':id' with known product ID.</br>
     id is a required parameter, otherwise product wont be retrieved.</br>
