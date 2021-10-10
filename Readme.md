@@ -133,7 +133,7 @@ Products:<br />
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     <b>You would need the exact ID for this endpoint to update a product.
     you can update one at a time, you dont have to have all fields in your update body,
-     if you do they will be subjected to validation. </b>
+     if you do they will be subjected to validation. Do not use null here unless required for instance, quantity</b>
 
 
 4. Delete one product using ID:</br>
@@ -141,16 +141,15 @@ Products:<br />
         https://shopmart24.herokuapp.com/product/:id </br>
     idis a required parameter, otherwise product wont be deleted.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
-    **You would need the exact ID for this endpoint to DELETE a product.**
+    <b>You would need the exact ID for this endpoint to DELETE a product.</b>
     </p2>
 
 <b>Products</b> </br>
 <p2>
-1. Retrieve all products from database:
-      
-        METHOD: GET
-
-        https://shopmart24.herokuapp.com/products
+1. Retrieve all products from database:</br>
+    METHOD: GET</br>
+    https://shopmart24.herokuapp.com/products
+        
     
     
     This will give you a list of all products from the database
