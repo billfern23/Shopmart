@@ -5,17 +5,15 @@ const Productservices = require('../services/Productsservices.js')
 
 //Product Schema
 // add product
-router.post("/addproduct",ProductServices.addnewproduct );
+router.post("/addproduct",Productservices.addnewproduct );
 
 //2. retrieve all product
 //4. retrieve producst belonging to specific product category
 //5. retrieve best selleter
-router.get("/",ProductServices.retrieveandfilterProducts )
+router.get("/",Productservices.retrieveandfilterProducts )
 
 //3. filter to get all categories
-router.get("/categories",ProductServices.showAllcategories)
-
-
+router.get("/categories",Productservices.showAllcategories)
 
 
 

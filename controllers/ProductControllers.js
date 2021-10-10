@@ -4,14 +4,14 @@ const Productservices = require('../services/ProductServices.js')
 
 //6. Filter based on productid
 
-router.get("/:id",Productservices.getAProduct)
+router.get("/:id",ProductServices.getAProduct)
 
 
  //7. updates an existing product
-router.put("/:id",Productservices.updateAProduct)   
+router.put("/:id",ProductServices.updateAProduct)   
 
 //8 deleting api
-router.delete("/:id",Productservices.deleteAproduct)
+router.delete("/:id",ProductServices.deleteAproduct)
 
 
 module.exports = router
