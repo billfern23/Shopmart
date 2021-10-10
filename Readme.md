@@ -128,7 +128,7 @@ Products:<br />
     
     METHOD: PUT
 
-    https://shopmart24.herokuapp.com/product/:id
+    https://shopmart24.herokuapp.com/product/:id </br>
     id is a required parameter, otherwise product wont be updated.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     **You would need the exact ID for this endpoint to update a product.**
@@ -137,14 +137,14 @@ Products:<br />
 
 4. Delete one product using ID:
      METHOD: DELETE
-        https://shopmart24.herokuapp.com/product/:id
+        https://shopmart24.herokuapp.com/product/:id </br>
  is a required parameter, otherwise product wont be deleted.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     **You would need the exact ID for this endpoint to DELETE a product.**
     </p2>
 
 <b>Products</b> </br>
-
+<p2>
 1. Retrieve all products from database:
       
         METHOD: GET
