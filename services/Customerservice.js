@@ -4,7 +4,9 @@ const customerModel = require("../models/Customer.js");
 //creates a customer
 exports.createACustomer = (req, res) => {
   //convert req.body into datatypes for easy processing
+  
   const { fname, lname, email, password, phone } = req.body;
+  
   //object to save errors and then delete empty ones after
   let errorList = {
     fnameCheck: "",
@@ -16,9 +18,96 @@ exports.createACustomer = (req, res) => {
   //if this flag is turned to false, nothing gets saved
   let checker = true;
 
+
+
+
+
+  
+
+  //checks if firstname value is missing
+  
+  if (fname == undefined) {
+    errorList.fnameCheck = `Missing First name Key:(fname) in body`;
+    checker = false;
+  }
+  else{
+      String(fname)
+      if (!fname.length){
+        errorList.fnameCheck = `First name  is empty`;
+        checker = false
+      }
+    
+  } 
+  //checks if lastname value is missing
+  if (lname == undefined) {
+    errorList.lnameCheck = `Missing Last name Key:(lname) in body`;
+    checker = false;
+  }
+  else {
+    String(lname)
+      if(!lname.length){
+        errorList.lnameCheck = `Last name is empty`;
+        checker = false
+      }
+  }
+  //checks if email is missing
+  if (email == undefined) {
+    errorList.emailcheck = `Missing email Key:(email) in body`;
+    checker = false;
+  }
+ else {
+
+    String(email)
+
+    if (!email.length) {
+        errorList.emailcheck = `Email is empty`;
+        checker = false;
+      }
+      else {
+        const regex = /[a-z0-9]+@[a-z]+.com$/gi
+        
+        if(!regex.test(email)){
+            errorList.emailcheck = `Not a real email`;
+                checker = false;
+        }
+      }
+ 
+
+
+ } 
+
+ 
+
+
+  
+  //checks if password was not enetered
+  if (password == undefined) {
+    errorList.passwordcheck = `Missing password Key:(password)`;
+    checker = false;
+  }
+
+  else {
+    String(password)
+      //checks for minimum length
+  if (password.length < 6) {
+    errorList.passwordcheck = `Password is too short, minimum length 6`;
+    checker = false;
+  }
+
+  }
+
+// only perform validation if phone is entered, not mandary field, if it is make sure it is good before its saved
+
+  if(phone !== undefined) {
+    if (typeof phone === "string") {
+        errorList.phonecheck = `Phone is a numbers array, you have entered a string, remove quotation marks and put them []`;
+        checker = false;
+      }
+ 
+    
   //if in array then you recieve an object, object length would be < 0, this checks each value if it is a string or if its not in an array
   if (!phone.length) {
-    errorList.phonecheck = `Please put phone number shoud be a numbers array []`;
+    errorList.phonecheck = `Please put phone number that is in the format numbers array []`;
     checker = false;
   } else {
     if (typeof phone === "object") {
@@ -33,54 +122,13 @@ exports.createACustomer = (req, res) => {
 
   //this checks phone, if a single string has been entered example: "a"
 
-  if (typeof phone === "string") {
-    errorList.phonecheck = `Phone is a numbers array, you have entered a string, remove quotation marks and put them []`;
-    checker = false;
-  }
-
-  //checks if firstname value is missing
-  if (!fname) {
-    errorList.fnameCheck = `Missing First name Key:(fname)`;
-    checker = false;
-  }
-  if(!fname.length){
-    errorList.fnameCheck = `First name field is empty`;
-    checker = false
-  }
-
-  //checks if lastname value is missing
-  if (!lname) {
-    errorList.lnameCheck = `Missing Last name Key:(lname)`;
-    checker = false;
-  }
-  if(!lname.length){
-    errorList.lnameCheck = `Last name field is empty`;
-    checker = false
-  }
-  //checks if email is missing
-  if (!email) {
-    errorList.emailcheck = `Missing email Key:(email)`;
-    checker = false;
-  }
-  if (!email.length) {
-    errorList.emailcheck = `Email is missing`;
-    checker = false;
-  }
+ 
 
 
-  
-  //checks if password was not enetered
-  if (!password) {
-    errorList.passwordcheck = `Missing password Key:(password)`;
-    checker = false;
-  }
+}
 
 
-  //checks for minimum length
-  if (password.length < 6) {
-    errorList.passwordcheck = `Password is too short, minimum length 6`;
-    checker = false;
-  }
+
 
   // deletes properties in errorList if  are no errors generated leaving only errors.
 
