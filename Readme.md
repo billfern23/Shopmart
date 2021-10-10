@@ -131,14 +131,14 @@ Products:<br />
     https://shopmart24.herokuapp.com/product/:id </br>
     id is a required parameter, otherwise product wont be updated.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
-    **You would need the exact ID for this endpoint to update a product.**
-    **you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation.**
+    <b>You would need the exact ID for this endpoint to update a product.
+    you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation. </b>
 
 
-4. Delete one product using ID:
-     METHOD: DELETE
+4. Delete one product using ID:</br>
+     METHOD: DELETE</br>
         https://shopmart24.herokuapp.com/product/:id </br>
- is a required parameter, otherwise product wont be deleted.
+    idis a required parameter, otherwise product wont be deleted.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     **You would need the exact ID for this endpoint to DELETE a product.**
     </p2>
