@@ -18,12 +18,6 @@ exports.createACustomer = (req, res) => {
   //if this flag is turned to false, nothing gets saved
   let checker = true;
 
-
-
-
-
-  
-
   //checks if firstname value is missing
   
   if (fname == undefined) {
