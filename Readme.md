@@ -1,25 +1,25 @@
-***SHOPMART API GUIDE**
-This API is built for Shopmart to perform operations with customers and inventory.
-It interacts with the shopMartdatabase
-This is an API that does the following: 
+***SHOPMART API GUIDE** <br />
+This API is built for Shopmart to perform operations with customers and inventory.<br />
+It interacts with the shopMartdatabase<br />
+This is an API that does the following: <br />
 
 DISCLAIMER: **Inorder to use the api, you have to use these endpoints with inputs the proper case**
 
 
-**QUICK LINKS**
-Customer:
-1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register
-2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id
+**QUICK LINKS**<br />
+Customer:<br />
+1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register<br />
+2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id<br />
 
-Products:
-1)Add new product to database: https://shopmart24.herokuapp.com/products/addproduct
-2)Retrieve all products from database: https://shopmart24.herokuapp.com/products
-3)Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories
-4)Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname
-5)Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes
-6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id
-7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id
-8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id
+Products:<br />
+1)Add new product to database: https://shopmart24.herokuapp.com/products/addproduct<br />
+2)Retrieve all products from database: https://shopmart24.herokuapp.com/products<br />
+3)Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories<br />
+4)Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname<br />
+5)Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes<br />
+6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id<br />
+7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id<br />
+8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id<br />
 
 
 CUSTOMERS
