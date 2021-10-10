@@ -1,7 +1,7 @@
 //assignment 1 that is working
 const express = require("express");
 const mongoose = require("mongoose");
-
+//controllers
 const customerController = require("./controllers/CustomerController.js");
 const productsController = require("./controllers/ProductsControllers.js");
 const productController = require("./controllers/ProductControllers.js");
@@ -17,6 +17,7 @@ app.use(express.json());
 
 // take all routers and put it in controllers
 // import the customercontroller here
+//seperated product and products based on operations requiring one or more products.
 app.use("/customer", customerController);
 app.use("/products", productsController);
 app.use("/product", productController);

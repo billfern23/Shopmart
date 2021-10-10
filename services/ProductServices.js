@@ -12,8 +12,11 @@ exports.addnewproduct = (req, res) => {
     bestSellercheck: "",
     picurlcheck: "",
   };
-
+ /* 
+ Checks if required keys are present in body, if not sends an error, if present, does validation.
+ */
   let checker = true;
+  //productname
   if (name == undefined) {
     errorList.nameCheck = ` Product name key required in body, missing key: (name)`;
     checker = false;
@@ -29,6 +32,7 @@ exports.addnewproduct = (req, res) => {
       }
     }
   }
+  //product price
   if (price == undefined) {
     errorList.priceCheck = ` Price key required in body, missing key: (price)`;
     checker = false;
@@ -38,6 +42,7 @@ exports.addnewproduct = (req, res) => {
       checker = false;
     }
   }
+  //product description, if present validation is performed
   if (description !== undefined) {
     if (typeof description !== "string") {
       errorList.descriptionCheck = `  Input must be  string datatype`;
@@ -49,6 +54,7 @@ exports.addnewproduct = (req, res) => {
       }
     }
   }
+  //product category
 
   if (category == undefined) {
     errorList.categorycheck = ` Category key required in body, missing key: (category)`;
@@ -65,7 +71,7 @@ exports.addnewproduct = (req, res) => {
       }
     }
   }
-
+//if quantity present, validation continuted
   if (quantity !== undefined) {
     if (typeof quantity != "number") {
       errorList.quantitycheck = `Quantity has to be a number datatype`;
@@ -73,10 +79,7 @@ exports.addnewproduct = (req, res) => {
     }
   }
 
-  //***********************************************************************fix before handing it in************************************* */
-  // if(bestSeller == ""){
-  //     errorList.bestSellercheck = `No BestSeller provided, missing key: bestSeller`
-  // }
+//bestseller
 
   if (bestSeller == undefined) {
     errorList.bestSellercheck = ` Best seller key required in body, missing key: (bestSeller)`;
@@ -87,6 +90,7 @@ exports.addnewproduct = (req, res) => {
       checker = false;
     }
   }
+  //if present validation continuted
   if (picurl !== undefined) {
     if (typeof picurl !== "string") {
       errorList.picurlcheck = `  Input must be  string datatype`;
@@ -99,7 +103,7 @@ exports.addnewproduct = (req, res) => {
     }
   }
 
-  // deletes properties in errorList if properties are empty
+  // deletes properties in errorList if properties are empty giving only errors if present
 
   for (const property in errorList) {
     if (!errorList[property]) {
@@ -107,6 +111,7 @@ exports.addnewproduct = (req, res) => {
     }
   }
 
+  //flag is false, if errors are present, else saves new product
   if (!checker) {
     res.status(400).json({
       message: `Product not added, Fix the following list of parameters`,
@@ -130,7 +135,7 @@ exports.addnewproduct = (req, res) => {
   }
 };
 
-//find product by id
+//find product by id, catches invalid id, id lengths.
 exports.getAProduct = (req, res) => {
   productModel
     .findById(req.params.id)
@@ -160,6 +165,7 @@ exports.getAProduct = (req, res) => {
 };
 
 //update one
+//updates only if present, if present, performs validation, not required parameters can be null
 exports.updateAProduct = (req, res) => {
   const {
     _id,
@@ -281,7 +287,8 @@ exports.updateAProduct = (req, res) => {
     }
   }
 };
-
+//deletes product by id
+//validates the id, for completness and correction
 exports.deleteAproduct = (req, res) => {
   productModel
     .findByIdAndDelete(req.params.id)

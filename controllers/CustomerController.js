@@ -4,12 +4,13 @@ const router = express.Router();
 const Customerservice = require("../services/Customerservice.js");
 
 //import customerservice services and use the function from there
+//1. register customer
 router.post("/register", Customerservice.createACustomer);
 
-//pull one customer
+//2.findone one customer
 router.get("/:id", Customerservice.getACustomer);
 
-//handle when client forgets to add id
+//3. Handle routes when the customer forgets to put /:id with an id
 router.get("/", Customerservice.getACustomer);
 
 module.exports = router;

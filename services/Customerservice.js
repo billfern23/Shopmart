@@ -17,8 +17,8 @@ exports.createACustomer = (req, res) => {
   //if this flag is turned to false, nothing gets saved
   let checker = true;
 
-  //Checks the body to find if the required KEY is in the body being submited by user, if it is there, then proceeds to validate the
-  //value
+  /*Checks the body to find if the required KEY is in the body being submited by user, if it is there, then proceeds to validate the
+  value otherwise, sends a 400, for incomplete parameters, shows required parameters missing */
   //Firstname
   if (fname == undefined) {
     errorList.fnameCheck = `First name Key required in body:(fname) `;

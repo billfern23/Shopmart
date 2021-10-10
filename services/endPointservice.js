@@ -1,3 +1,4 @@
+//Endpoint checker, if the enpoint generally doesnt exist, this will tell the client they need to only use these end points
 exports.endpoint = (req, res) => {
   let correctPoints = {
     newCustomer: `https://shopmart24.herokuapp.com/customer/register`,

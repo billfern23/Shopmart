@@ -1,5 +1,5 @@
 const productModel = require("../models/Products.js");
-
+//Retrieves All products, filters by category or bestsellers
 exports.retrieveandfilterProducts = (req, res) => {
   if (req.query.category) {
     productModel

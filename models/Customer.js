@@ -28,8 +28,8 @@ const customerSchema = new Schema({
     default: Date.now(),
   },
 });
-
-customerSchema.pre("save", function (next) {
+//pre saved Mongoose hook used here
+customerSchema.pre("save", function (next) {  
   let customer = this;
 
   bcrypt.genSalt(parseInt(process.env.SALT)).then((salt) => {
@@ -52,6 +52,8 @@ customerSchema.pre("save", function (next) {
   });
 });
 
+//Customers, collection name
+//customerModel model object used to do CRUD operations
 const CustomerModel = mongoose.model("Customers", customerSchema);
 
 module.exports = CustomerModel;
