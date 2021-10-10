@@ -10,7 +10,7 @@ This is an API that does the following: <br />
 <b>Customer:<b> </br>
 <ol>
 <li>To Register a new Customer: https://shopmart24.herokuapp.com/customer/register</li>
-<li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/<li>
+<li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/</li>
 </ol>
 
 Product: <br />
