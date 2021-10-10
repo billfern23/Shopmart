@@ -5,7 +5,8 @@ const ProductServices = require('../services/ProductServices.js')
 //6. Filter based on productid
 
 router.get("/:id",ProductServices.getAProduct)
-
+// add product
+router.post("/addproduct",ProductServices.addnewproduct );
 
  //7. updates an existing product
 router.put("/:id",ProductServices.updateAProduct)   

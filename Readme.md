@@ -9,20 +9,26 @@ This is an API that does the following: <br />
 <h2>QUICK LINKS</h2>
 <b>Customer:<b> </br>
 <ol>
-<li>1)To Register a new Customer: https://shopmart24.herokuapp.com/customer/register</li>
-<li>2)To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/li>
+<li>To Register a new Customer: https://shopmart24.herokuapp.com/customer/register</li>
+<li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/li>
 </ol>
 
 
 Products:<br />
-1)Add new product to database: https://shopmart24.herokuapp.com/products/addproduct<br />
-2)Retrieve all products from database: https://shopmart24.herokuapp.com/products<br />
-3)Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories<br />
-4)Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname<br />
-5)Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes<br />
-6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id<br />
-7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id<br />
-8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id<br />
+<ol>
+<li>Add new product to database: https://shopmart24.herokuapp.com/products/addproduct</li>
+<li>Retrieve all products from database: https://shopmart24.herokuapp.com/products</li>
+<li>Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories</li>
+<li>Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname</li>
+<li>Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id
+7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id
+8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id
 
 Miss-spell an endpoint or go to incorrect one, you will be routed back
 
