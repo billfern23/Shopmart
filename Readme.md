@@ -43,7 +43,7 @@ Products:<br />
 
     required Keys in body: 
       Reference guide:
-    ```yaml            
+               
                         {
                             fname : String datatype, 
                             lname: String datatype,
@@ -62,8 +62,8 @@ Products:<br />
                     password: "test",
                     number:  [12345678,1234567]
                                                   }
-</p2>
-2) To Retrieve a customer using ID:
+
+2. To Retrieve a customer using ID:
     
     METHOD: GET
 
@@ -72,10 +72,10 @@ Products:<br />
     id is a required parameter, otherwise customer wont be retrieved.
     Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it.
     **You would need the exact ID for this endpoint to retrieve a customer.
-
+</p2>
 <b>Product</b> </br>
 <p2>
-1) To add a new Product to shopmart Database:
+1. To add a new Product to shopmart Database:
     
     METHOD: GET
 
@@ -113,7 +113,7 @@ Products:<br />
                             }
                             Boolean values: true/false
 
-2)Retrieve a product using ID:
+2. Retrieve a product using ID:
     
     METHOD: GET
 
@@ -124,7 +124,7 @@ Products:<br />
     **You would need the exact ID for this endpoint to retrieve a product.**
 
 
-3) Update one product using ID:
+3. Update one product using ID:
     
     METHOD: PUT
 
@@ -135,7 +135,7 @@ Products:<br />
     **you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation.**
 
 
-4) Delete one product using ID:
+4. Delete one product using ID:
      METHOD: DELETE
         https://shopmart24.herokuapp.com/product/:id
  is a required parameter, otherwise product wont be deleted.
@@ -145,7 +145,7 @@ Products:<br />
 
 <b>Products</b> </br>
 
-1) Retrieve all products from database:
+1. Retrieve all products from database:
       
         METHOD: GET
 
@@ -156,13 +156,13 @@ Products:<br />
 
 
 
-2) Retrieves All categories from Database:
+2. Retrieves All categories from Database:
         
         METHOD: GET
 
         https://shopmart24.herokuapp.com/products/categories
 
-3) Retrieves All products from a specific category:
+3. Retrieves All products from a specific category:
     
         METHOD: GET
         
@@ -176,7 +176,7 @@ Products:<br />
 
         not table, Table.
 
-4) Retrieve products that are Best sellers
+4. Retrieve products that are Best sellers
     METHOD: GET
     
     https://shopmart24.herokuapp.com/products?bestseller=yes
