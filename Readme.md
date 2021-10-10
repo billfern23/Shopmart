@@ -3,7 +3,7 @@
 It interacts with the shopMartdatabase<br />
 This is an API that does the following: <br />
 
-**DISCLAIMER: Inorder to use the api, you have to use these endpoints with inputs the proper case** </p1>
+**DISCLAIMER: INORDER TO USE API, YOU HAVE TO USE THIS END POINT AND PROPER CASES, METHODS** </p1>
 
 
 **QUICK LINKS**<br />
