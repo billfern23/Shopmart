@@ -353,7 +353,7 @@ exports.deleteAproduct = (req, res) =>{
 
       }
       else {
-        res.status(400).json({
+        res.status(404).json({
             message: `Incorrect ID, product with ${req.params.id} does not exists`
         })
       }
