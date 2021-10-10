@@ -69,7 +69,7 @@ Products:<br />
     METHOD: GET
 
     https://shopmart24.herokuapp.com/customer/:id
-
+    How to use:
     id is a required parameter, otherwise customer wont be retrieved.
     Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it.
   <b>You would need the exact ID for this endpoint to retrieve a customer.</b>
@@ -119,7 +119,7 @@ Products:<br />
     METHOD: GET
 
     https://shopmart24.herokuapp.com/product/:id
-
+    How to use:
     id is a required parameter, otherwise product wont be retrieved.
     Replace ':id' with known product ID.
     **You would need the exact ID for this endpoint to retrieve a product.**
@@ -130,6 +130,7 @@ Products:<br />
     METHOD: PUT
 
     https://shopmart24.herokuapp.com/product/:id </br>
+    How to use:
     id is a required parameter, otherwise product wont be updated.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     <b>You would need the exact ID for this endpoint to update a product.
@@ -140,7 +141,8 @@ Products:<br />
 4. Delete one product using ID:</br>
      METHOD: DELETE</br>
         https://shopmart24.herokuapp.com/product/:id </br>
-    idis a required parameter, otherwise product wont be deleted.
+    How to use:
+    id is a required parameter, otherwise product wont be deleted.
     Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
     <b>You would need the exact ID for this endpoint to DELETE a product.</b>
     </p2>
@@ -150,9 +152,8 @@ Products:<br />
 1. Retrieve all products from database:</br>
     METHOD: GET</br>
     https://shopmart24.herokuapp.com/products
-        
-    
-    
+    How to use:
+    Paste url with get method
     This will give you a list of all products from the database
 
 
@@ -162,6 +163,8 @@ Products:<br />
 
     https://shopmart24.herokuapp.com/products/categories</br>
     </br>
+    How to use:
+    Paste url with get method
         This will give you a list of all categories in the database.
 
 
@@ -171,7 +174,8 @@ Products:<br />
     METHOD: GET</br>
         
     https://shopmart24.herokuapp.com/products?category=categoryname </br>
-
+    How to use:
+    Paste url with get method
     Method uses a query field a query field called cateogry, replace categoryname with 
     the category of products you want to retrieve.
     <b>DISCLAIMER: The categoryname must be exactly the same way it is stored in the database ie, case 
@@ -179,12 +183,14 @@ Products:<br />
 
         Example
      https://shopmart24.herokuapp.com/products?category=Table </br>
+     
 
         not table, Table.
 
-4. Retrieve products that are Best sellers
+4. Retrieve products that are Best sellers </br>
     METHOD: GET</br>
-    
+     How to use:
+    Paste url with get method
     https://shopmart24.herokuapp.com/products?bestseller=yes</br>
 
 
