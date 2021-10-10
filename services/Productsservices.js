@@ -53,7 +53,7 @@ exports.retrieveandfilterProducts = (req, res) =>{
     
         else {
             res.status(404).json({
-                message: `Please type yes, case sensitive`
+                message: `Please type "yes", case sensitive, no quotes`
             })
         }
     }

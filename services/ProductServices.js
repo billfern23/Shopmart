@@ -181,8 +181,8 @@ exports.getAProduct = (req, res) =>{
     })
     .catch(err=>{
         if(err.name == "CastError") {
-            res.status(404).json({
-                message: `Id format is incorrect, please fix, Its either too long or too short or is not an id`
+            res.status(400).json({
+                message: `Id format is incorrect, please fix, Its either too long or too short or is`
             })
         }
         else {
