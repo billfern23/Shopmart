@@ -164,11 +164,11 @@ Products:<br />
 
 
 
-3. Retrieves All products from a specific category:
+3. Retrieves All products from a specific category:</br>
     
-        METHOD: GET
+    METHOD: GET</br>
         
-        https://shopmart24.herokuapp.com/products?category=categoryname
+        https://shopmart24.herokuapp.com/products?category=categoryname</br>
 
         Method uses a query field a query field called cateogry, replace categoryname with 
         the category of products you want to retrieve.
@@ -180,10 +180,10 @@ Products:<br />
 
         not table, Table.
 
-4. Retrieve products that are Best sellers
-    METHOD: GET
+4. Retrieve products that are Best sellers</br>
+METHOD: GET</br>
     
-    https://shopmart24.herokuapp.com/products?bestseller=yes
+    https://shopmart24.herokuapp.com/products?bestseller=yes</br>
 
 
     This method uses a query field called bestseller, it takes parameters yes or | Yes.
