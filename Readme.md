@@ -73,8 +73,8 @@ Products:<br />
     Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it.
     **You would need the exact ID for this endpoint to retrieve a customer.
 
-Products
-
+<b>Product</b> </br>
+<p2>
 1) To add a new Product to shopmart Database:
     
     METHOD: GET
@@ -111,7 +111,40 @@ Products
 
                             }
                             Boolean values: true/false
-2) Retrieve all products from database:
+
+2)Retrieve a product using ID:
+    
+    METHOD: GET
+
+    https://shopmart24.herokuapp.com/product/:id
+
+    id is a required parameter, otherwise product wont be retrieved.
+    Replace ':id' with known product ID.
+    **You would need the exact ID for this endpoint to retrieve a product.**
+
+
+3) Update one product using ID:
+    
+    METHOD: PUT
+
+    https://shopmart24.herokuapp.com/product/:id
+    id is a required parameter, otherwise product wont be updated.
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
+    **You would need the exact ID for this endpoint to update a product.**
+    **you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation.**
+
+
+4) Delete one product using ID:
+     METHOD: DELETE
+        https://shopmart24.herokuapp.com/product/:id
+ is a required parameter, otherwise product wont be deleted.
+    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
+    **You would need the exact ID for this endpoint to DELETE a product.**
+    </p2>
+
+<b>Products</b> </br>
+
+1) Retrieve all products from database:
       
         METHOD: GET
 
@@ -122,13 +155,13 @@ Products
 
 
 
-3) Retrieves All categories from Database:
+2) Retrieves All categories from Database:
         
         METHOD: GET
 
         https://shopmart24.herokuapp.com/products/categories
 
-4) Retrieves All products from a specific category:
+3) Retrieves All products from a specific category:
     
         METHOD: GET
         
@@ -142,7 +175,7 @@ Products
 
         not table, Table.
 
-5) Retrieve products that are Best sellers
+4) Retrieve products that are Best sellers
     METHOD: GET
     
     https://shopmart24.herokuapp.com/products?bestseller=yes
@@ -151,34 +184,7 @@ Products
     This method uses a query field called bestseller, it takes parameters yes or | Yes.
     **Both are case sensitive and spelling sensitive**
 
+</p2>
 
-6)Retrieve a product using ID:
-    
-    METHOD: GET
-
-    https://shopmart24.herokuapp.com/product/:id
-
-    id is a required parameter, otherwise product wont be retrieved.
-    Replace ':id' with known product ID.
-    **You would need the exact ID for this endpoint to retrieve a product.**
-
-
-7) Update one product using ID:
-    
-    METHOD: PUT
-
-    https://shopmart24.herokuapp.com/product/:id
-    id is a required parameter, otherwise product wont be updated.
-    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
-    **You would need the exact ID for this endpoint to update a product.**
-    **you can update one at a time, you dont have to have all fields in your update body, if you do they will be subjected to validation.**
-
-
-8) Delete one product using ID:
-     METHOD: DELETE
-        https://shopmart24.herokuapp.com/product/:id
- is a required parameter, otherwise product wont be deleted.
-    Replace ':id' with known product ID. It has to be the same id, length, sequence all of it.
-    **You would need the exact ID for this endpoint to DELETE a product.**
  
 
