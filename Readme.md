@@ -1,10 +1,10 @@
 <h1>SHOPMART API GUIDE </h1>
 <p1>This API is built for Shopmart to perform operations with customers and inventory.<br />
 It interacts with the shopMartdatabase<br />
-This is an API that does the following: <br />
+
 
 **DISCLAIMER: INORDER TO USE API, YOU HAVE TO USE THIS END POINT AND PROPER CASES, METHODS** </p1>
-
+This is an API that does the following: <br />
 
 <h2>QUICK LINKS</h2>
 <b>Customer:<b> </br>
