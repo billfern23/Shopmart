@@ -7,7 +7,7 @@ exports.createACustomer = (req, res) => {
   
   const { fname, lname, email, password, phone } = req.body;
   
-  //object to save errors and then delete empty ones after
+
   let errorList = {
     fnameCheck: "",
     lnameCheck: "",
@@ -18,8 +18,9 @@ exports.createACustomer = (req, res) => {
   //if this flag is turned to false, nothing gets saved
   let checker = true;
 
-  //checks if firstname value is missing
-  
+  //Checks the body to find if the required KEY is in the body being submited by user, if it is there, then proceeds to validate the 
+  //value
+  //Firstname
   if (fname == undefined) {
     errorList.fnameCheck = `Missing First name Key:(fname) in body`;
     checker = false;
@@ -32,7 +33,7 @@ exports.createACustomer = (req, res) => {
       }
     
   } 
-  //checks if lastname value is missing
+//lastname
   if (lname == undefined) {
     errorList.lnameCheck = `Missing Last name Key:(lname) in body`;
     checker = false;
@@ -44,7 +45,7 @@ exports.createACustomer = (req, res) => {
         checker = false
       }
   }
-  //checks if email is missing
+//email
   if (email == undefined) {
     errorList.emailcheck = `Missing email Key:(email) in body`;
     checker = false;
@@ -73,8 +74,7 @@ exports.createACustomer = (req, res) => {
  
 
 
-  
-  //checks if password was not enetered
+//password
   if (password == undefined) {
     errorList.passwordcheck = `Missing password Key:(password)`;
     checker = false;
@@ -82,7 +82,7 @@ exports.createACustomer = (req, res) => {
 
   else {
     String(password)
-      //checks for minimum length
+    
   if (password.length < 6) {
     errorList.passwordcheck = `Password is too short, minimum length 6`;
     checker = false;
@@ -90,7 +90,7 @@ exports.createACustomer = (req, res) => {
 
   }
 
-// only perform validation if phone is entered, not mandary field, if it is make sure it is good before its saved
+// only perform validation if phone is present in the body, if it is then it proceeds to validate the values otherwise skip.
 
   if(phone !== undefined) {
     if (typeof phone === "string") {
@@ -122,20 +122,10 @@ exports.createACustomer = (req, res) => {
   }
 
  }
-    
-
-
-  //this checks phone, if a single string has been entered example: "a"
-
- 
-
 
 }
 
-
-
-
-  // deletes properties in errorList if  are no errors generated leaving only errors.
+  // deletes properties in errorList if properties are empty
 
   for (const property in errorList) {
     if (!errorList[property]) {
@@ -163,7 +153,6 @@ exports.createACustomer = (req, res) => {
         });
       })
       .catch((err) => {
-        console.log(`error ${err}`);
         res.status(500).json({
           message: err,
         });
