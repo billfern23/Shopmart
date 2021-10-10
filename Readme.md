@@ -34,9 +34,9 @@ Products:<br />
 **Miss-spell an endpoint or go to incorrect one, response will be send with appropriate links**
 
 
-CUSTOMERS
-1) To Register a new Customer: 
-   
+<b>CUSTOMER</b>
+<p2> 1) To Register a new Customer: 
+  
     METHOD: POST
 
     https://shopmart24.herokuapp.com/customer/register
@@ -62,7 +62,7 @@ CUSTOMERS
                     password: "test",
                     number:  [12345678,1234567]
                                                   }
-
+</p2>
 2) To Retrieve a customer using ID:
     
     METHOD: GET
