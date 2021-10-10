@@ -13,7 +13,7 @@ exports.endpoint = (req, res) =>{
 
     }
     res.status(404).json({
-        message: `Wrong API endpoint, use the proper link by using readme file`,
+        message: `Wrong API endpoint, for more information read readme file`,
         hint: correctPoints
     })
 
