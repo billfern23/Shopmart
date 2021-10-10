@@ -34,7 +34,7 @@ Products:<br />
 **Miss-spell an endpoint or go to incorrect one, response will be send with appropriate links**
 
 
-<b>CUSTOMER</b>
+<b>CUSTOMER</b> </br>
 <p2> 1) To Register a new Customer: 
   
     METHOD: POST
@@ -43,7 +43,7 @@ Products:<br />
 
     required Keys in body: 
       Reference guide:
-                 ```yaml
+                
                         {
                             fname : String datatype, 
                             lname: String datatype,
