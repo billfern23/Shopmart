@@ -171,24 +171,24 @@ Products:<br />
         
     https://shopmart24.herokuapp.com/products?category=categoryname </br>
 
-        Method uses a query field a query field called cateogry, replace categoryname with 
-        the category of products you want to retrieve.
-        ****DISCLAIMER: The categoryname must be exactly the same way it is stored in the database ie, case 
-        and is spelling sensitive****
+    Method uses a query field a query field called cateogry, replace categoryname with 
+    the category of products you want to retrieve.
+    <b>DISCLAIMER: The categoryname must be exactly the same way it is stored in the database ie, case 
+     and is spelling sensitive</b>
 
         Example
-    https://shopmart24.herokuapp.com/products?category=Table </br>
+     https://shopmart24.herokuapp.com/products?category=Table </br>
 
         not table, Table.
 
 4. Retrieve products that are Best sellers
-METHOD: GET</br>
+    METHOD: GET</br>
     
-https://shopmart24.herokuapp.com/products?bestseller=yes</br>
+    https://shopmart24.herokuapp.com/products?bestseller=yes</br>
 
 
-This method uses a query field called bestseller, it takes parameters yes or | Yes.
-**Both are case sensitive and spelling sensitive**
+    This method uses a query field called bestseller, it takes parameters yes or | Yes.
+    **Both are case sensitive and spelling sensitive**
 
 </p2>
 
