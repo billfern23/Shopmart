@@ -43,7 +43,7 @@ Products:<br />
 
     required Keys in body: 
       Reference guide:
-                
+    ```yaml            
                         {
                             fname : String datatype, 
                             lname: String datatype,
