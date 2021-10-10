@@ -52,6 +52,6 @@ customerSchema.pre("save", function (next) {
   });
 });
 
-const Customer = mongoose.model("Customer", customerSchema);
+const CustomerModel = mongoose.model("Customers", customerSchema);
 
-module.exports = Customer;
+module.exports = CustomerModel;

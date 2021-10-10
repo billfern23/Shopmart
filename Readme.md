@@ -1,4 +1,4 @@
-SHOPMART API GUIDE
+***SHOPMART API GUIDE**
 This API is built for Shopmart to perform operations with customers and inventory.
 It interacts with the shopMartdatabase
 This is an API that does the following: 
@@ -20,3 +20,7 @@ CUSTOMERS
     id is a required parameter, otherwise customer wont be retrieved.
     Replace ':id' with known customer ID.
     **You would need the exact ID for this endpoint to retrieve a customer.
+
+Products
+
+3)

@@ -20,7 +20,7 @@ const productSchema = new Schema({
     },
     quantity: {
         type: String,
-        required: true
+        required: false
     },
     bestSeller: {
         type:Boolean,
@@ -29,7 +29,7 @@ const productSchema = new Schema({
     picurl:
     {
         type:String,
-        required:true
+        required:false
     },
     dateCreated:{
         type:Date,
@@ -38,6 +38,6 @@ const productSchema = new Schema({
 
     
 })
-const Product = mongoose.model('Product', productSchema);
+const ProductModel = mongoose.model('Products', productSchema);
 
-module.exports = Product;
+module.exports = ProductModel;
