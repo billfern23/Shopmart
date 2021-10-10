@@ -1,7 +1,7 @@
 // export multiple functions
 //this is the layer that interacts with database with the bussiness logic
 const customerModel = require("../models/Customer.js");
-//creates a customer
+//Registered new customer
 exports.createACustomer = (req, res) => {
   //convert req.body into datatypes for easy processing
   
@@ -160,7 +160,7 @@ exports.createACustomer = (req, res) => {
   }
 };
 
-//pull one customer
+//find a customer using ID 
 exports.getACustomer = (req, res) => {
     if(!req.params.id){
         res.status(400).json({
