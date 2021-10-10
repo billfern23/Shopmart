@@ -211,7 +211,7 @@ exports.getACustomer = (req, res) => {
     })
     .catch((err) => {
       if (err.name == "CastError") {
-        res.status(404).json({
+        res.status(400).json({
           message: `Id format is incorrect: id either too long or wrong, this id cannot be a mongdb id`
         });
       } else {
