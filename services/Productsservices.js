@@ -64,6 +64,7 @@ exports.retrieveandfilterProducts = (req, res) =>{
             .then((products)=>{
                 res.json({
                     message: `List of all available products`,
+                    totalNumber: products.length,
                     Products: products
         
                 })
