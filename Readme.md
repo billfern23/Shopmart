@@ -156,11 +156,13 @@ Products:<br />
 
 
 
-2. Retrieves All categories from Database:
-        
-        METHOD: GET
+2. Retrieves All categories from Database:</br>
+    METHOD: GET</br>
 
-        https://shopmart24.herokuapp.com/products/categories
+        https://shopmart24.herokuapp.com/products/categories</br>
+        This will give you a list of all categories in the database.
+
+
 
 3. Retrieves All products from a specific category:
     
