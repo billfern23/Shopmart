@@ -32,7 +32,7 @@ exports.retrieveandfilterProducts = (req, res) =>{
     }
     
     else if(req.query.bestseller){
-        if(req.query.bestseller == "yes" || req.query.bestseller == "YES"){
+        if(req.query.bestseller == "yes"){
     
             productModel.find()
             .where('bestSeller').equals(true)
@@ -53,7 +53,7 @@ exports.retrieveandfilterProducts = (req, res) =>{
     
         else {
             res.status(404).json({
-                message: `Please type yes or Yes`
+                message: `Please type yes, case sensitive`
             })
         }
     }
