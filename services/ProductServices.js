@@ -322,7 +322,7 @@ exports.updateAProduct = (req, res) =>{
             })
             .catch((err)=>{
                 if(err.name == "CastError") {
-                    res.status(404).json({
+                    res.status(400).json({
                         message: `Id format is incorrect, please fix, wrong number of characters in id`
                     })
                 }
@@ -360,7 +360,7 @@ exports.deleteAproduct = (req, res) =>{
     })
     .catch((err)=>{
         if(err.name == "CastError") {
-            res.status(404).json({
+            res.status(400).json({
                 message: `Id format is incorrect, please fix, wrong number of characters in id`
             })
         }
