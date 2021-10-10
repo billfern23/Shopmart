@@ -149,7 +149,7 @@ exports.createACustomer = (req, res) => {
   if (!checker) {
     res.status(400).json({
       result: `Customer was not added`,
-      message: `Missing values, or values dont meet criteria, fix`,
+      message: `Missing required parameters or values, or values dont meet criteria, fix`,
       MissingParameters: errorList,
     });
   }
