@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Productservices = require('../services/ProductServices.js')
+const ProductServices = require('../services/ProductServices.js')
 
 //6. Filter based on productid
 
