@@ -150,7 +150,7 @@ exports.createACustomer = (req, res) => {
     res.status(400).json({
       result: `Customer was not added`,
       message: `Missing values, or values dont meet criteria, fix`,
-      Fieldsmissing: errorList,
+      MissingParameters: errorList,
     });
   }
   //instantiate the document you created in model, sends 500, for server error because this has to be server error
