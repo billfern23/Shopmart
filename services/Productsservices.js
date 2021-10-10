@@ -30,6 +30,8 @@ exports.addnewproduct = (req, res) => {
         completeproduct.bestSellercheck = `Please use either true or false, case sensitive, or missing key(Boolean)`
         checker = false;
     }
+ 
+
     if(!checker){
         res.json({
             message: `Complete the listed parameters`,

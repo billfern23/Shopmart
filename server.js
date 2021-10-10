@@ -20,7 +20,7 @@ app.use(express.json());
 
 // take all routers and put it in controllers
 // import the customercontroller here
-app.use("/customers", customerController);
+app.use("/customer", customerController);
 app.use("/products", productController);
 app.use(endpointController)
 

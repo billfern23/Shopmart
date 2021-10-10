@@ -9,6 +9,7 @@ router.post("/register",Customerservice.createACustomer)
 //pull one customer
 router.get("/:id",Customerservice.getACustomer)
 
-
+//handle when client forgets to add id
+router.get("/",Customerservice.getACustomer)
 
 module.exports = router
