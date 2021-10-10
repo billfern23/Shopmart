@@ -64,7 +64,7 @@ exports.createACustomer = (req, res) => {
         checker = false;
       }
       else {
-        const regex = /[a-z]+@*.com|.ca$/gi
+        const regex = /[a-z0-9]+@[a-z]+.com|.ca$/gi
         
         if(!regex.test(email)){
             errorList.emailcheck = `Not a real email`;
@@ -103,9 +103,9 @@ exports.createACustomer = (req, res) => {
         errorList.phonecheck = `Phone is a numbers array, you have entered a string, remove quotation marks and put them []`;
         checker = false;
       }
- 
-    
-  //if in array then you recieve an object, object length would be < 0, this checks each value if it is a string or if its not in an array
+ else {
+
+      //if in array then you recieve an object, object length would be < 0, this checks each value if it is a string or if its not in an array
   if(phone.length === 0){
     errorList.phonecheck = `Empty array`;
     checker = false;
@@ -126,6 +126,10 @@ exports.createACustomer = (req, res) => {
       }
     }
   }
+
+ }
+    
+
 
   //this checks phone, if a single string has been entered example: "a"
 
