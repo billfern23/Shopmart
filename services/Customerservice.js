@@ -164,7 +164,7 @@ exports.createACustomer = (req, res) => {
 exports.getACustomer = (req, res) => {
     if(!req.params.id){
         res.status(400).json({
-            error: `Incomplete end point, https://shopmart24.herokuapp.com//customer/id, id is required` 
+            error: `Incomplete end point, https://shopmart24.herokuapp.com/customer/:id, id is required (replace:id with customer id)` 
         })
     }
     else {
