@@ -13,22 +13,23 @@ This is an API that does the following: <br />
 <li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/li>
 </ol>
 
+Product: <br />
+<ol>
+<li>Add new product to database: https://shopmart24.herokuapp.com/product/addproduct</li>
+<li>Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id</li>
+<li>Update a product using ID: https://shopmart24.herokuapp.com/product/:id</li>
+<li>Delete a product usingID: https://shopmart24.herokuapp.com/product/:id</li>
+</ol>
 
 Products:<br />
 <ol>
-<li>Add new product to database: https://shopmart24.herokuapp.com/products/addproduct</li>
 <li>Retrieve all products from database: https://shopmart24.herokuapp.com/products</li>
 <li>Retrieves All categories from Database: https://shopmart24.herokuapp.com/products/categories</li>
 <li>Retrieves All products from a specific category: https://shopmart24.herokuapp.com/products?category=categoryname</li>
 <li>Retrieve products that are Best sellers: https://shopmart24.herokuapp.com/products?bestseller=yes</li>
-<li></li>
-<li></li>
-<li></li>
 </ol>
 
-6)Retrieve a product using ID:  https://shopmart24.herokuapp.com/product/:id
-7)Update a product using ID: https://shopmart24.herokuapp.com/product/:id
-8)Delete a product usingID: https://shopmart24.herokuapp.com/product/:id
+
 
 Miss-spell an endpoint or go to incorrect one, you will be routed back
 
@@ -77,7 +78,7 @@ Products
     
     METHOD: GET
 
-    https://shopmart24.herokuapp.com/products/addproduct
+    https://shopmart24.herokuapp.com/product/addproduct
   
 
     Required keys in the body:
