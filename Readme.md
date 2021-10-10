@@ -10,7 +10,7 @@ This is an API that does the following: <br />
 <b>Customer:<b> </br>
 <ol>
 <li>To Register a new Customer: https://shopmart24.herokuapp.com/customer/register</li>
-<li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/li>
+<li>To Retrieve a customer using ID: https://shopmart24.herokuapp.com/customer/:id/<li>
 </ol>
 
 Product: <br />
@@ -31,7 +31,7 @@ Products:<br />
 
 
 
-Miss-spell an endpoint or go to incorrect one, you will be routed back
+**Miss-spell an endpoint or go to incorrect one, response will be send with appropriate links**
 
 
 CUSTOMERS
