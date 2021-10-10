@@ -68,8 +68,8 @@ exports.createACustomer = (req, res) => {
     checker = false;
   }
  else {
-    if(typeof(lname) !== "string"){
-        errorList.lnameCheck = ` Input must be  string datatype`
+    if(typeof(email) !== "string"){
+        errorList.emailcheck = ` Input must be  string datatype`
         checker = false
 
     } else {
