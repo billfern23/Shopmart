@@ -106,16 +106,23 @@ exports.createACustomer = (req, res) => {
  
     
   //if in array then you recieve an object, object length would be < 0, this checks each value if it is a string or if its not in an array
-  if (!phone.length) {
-    errorList.phonecheck = `Please put phone number that is in the format numbers array []`;
+  if(phone.length === 0){
+    errorList.phonecheck = `Empty array`;
     checker = false;
-  } else {
+  }
+  else if (!phone.length) {
+     
+    errorList.phonecheck = `Please put phone number that is in the format numbers array [phonenumber, faxnumber, etc]`;
+    checker = false;
+  } 
+  else {
     if (typeof phone === "object") {
       for (const property in phone) {
         if (typeof phone[property] !== "number") {
           errorList.phonecheck = `One or more  Strings are present in an array, please remove quotation marks`;
           checker = false;
         }
+       
       }
     }
   }
