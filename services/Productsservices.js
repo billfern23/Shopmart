@@ -319,13 +319,7 @@ exports.updateAProduct = (req, res) =>{
                 checker = false
             }
         }
-        if(!checker){
-            res.json({
-                message: `Some parameters need fixing before you update, otherwise take them out`,
-                paramters: errorListupdate
-            })
-        }
-
+      
          if(price != undefined){
             if(typeof(price)!== "number"){
                
