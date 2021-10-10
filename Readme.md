@@ -84,6 +84,7 @@ Products:<br />
 
     Required keys in the body:
     Reference guide:
+    ```yaml
                         {
                             "name": String datatype,
                             "price": Number datatype,
