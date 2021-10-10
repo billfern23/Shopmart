@@ -32,7 +32,7 @@ Products:<br />
 
 
 
-**Miss-spell an endpoint or go to incorrect one, response will be send with appropriate links**
+  <b>Miss-spell an endpoint or go to incorrect one, response will be send with appropriate links</b>
 
 
 <b>CUSTOMER</b> </br>
