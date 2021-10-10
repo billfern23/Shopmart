@@ -160,6 +160,7 @@ Products:<br />
     METHOD: GET</br>
 
     https://shopmart24.herokuapp.com/products/categories</br>
+    </br>
         This will give you a list of all categories in the database.
 
 
@@ -186,8 +187,8 @@ METHOD: GET</br>
 https://shopmart24.herokuapp.com/products?bestseller=yes</br>
 
 
-    This method uses a query field called bestseller, it takes parameters yes or | Yes.
-    **Both are case sensitive and spelling sensitive**
+This method uses a query field called bestseller, it takes parameters yes or | Yes.
+**Both are case sensitive and spelling sensitive**
 
 </p2>
 
