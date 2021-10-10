@@ -72,7 +72,7 @@ Products:<br />
 
     id is a required parameter, otherwise customer wont be retrieved.
     Replace ':id' with known customer ID. It has to be the same id, length, sequence all of it.
-    **You would need the exact ID for this endpoint to retrieve a customer.
+  <b>You would need the exact ID for this endpoint to retrieve a customer.</b>
 </p2>
 <b>Product</b> </br>
 <p2>
