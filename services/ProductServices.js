@@ -197,7 +197,7 @@ exports.updateAProduct = (req, res) => {
       if (typeof name !== "string") {
         errorListupdate.nameCheck = ` Name has to be a string Type`;
         checker = false;
-      } else if (!name == "") {
+      } else if (name == "") {
         errorListupdate.nameCheck = `Name cannot be empty`;
         checker = false;
       }
